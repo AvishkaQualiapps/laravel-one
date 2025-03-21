@@ -1,1 +1,15 @@
-<h3>{{ $task -> title }}</h3>
+@extends('layouts.app')
+
+@section('title')
+    {{ $task->title }}
+@endsection
+
+@section('section')
+    <p>{{ $task->description }}</p>
+
+    @if($task->long_description)
+        <p>{{$task->long_description}}</p>
+    @endif
+    <p>{{ $task->created_at}}</p>
+    <p>{{ $task->updated_at}}</p>
+@endsection
