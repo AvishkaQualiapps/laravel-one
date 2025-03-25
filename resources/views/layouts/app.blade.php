@@ -9,6 +9,9 @@
     <h1>Task List App</h1>
     <h2>@yield('title')</h2>
     <div>
+        @if (session()->has('success'))
+        <div>{{session('success')}}</div>
+        @endif
         @yield('section')
     </div>
 </body>
