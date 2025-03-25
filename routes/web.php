@@ -30,13 +30,6 @@ Route::get('/tasks/{id}', function ($id) {
     ]);
 })->name('tasks.show');
 
-Route::post('/tasks_save', function (Request $request) {
-    // Log::info('Headers: ' . print_r($request->headers->all(), true));
-    // Log::info('Request Method: ' . $request->method());
-    // Log::info('Input: ' . print_r($request->input(), true));
-    // $title = $request->input('title');
-    // $description = $request->input('description');
-    // $long_description = $request->input('long_description');
-    // return "$title , $description , $long_description"
-    dd($request->input('title'));
+Route::post('/tasks', function (Request $request) {
+    dd($request->all());
 })->name('tasks.store');
