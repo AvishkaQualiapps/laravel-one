@@ -3,7 +3,7 @@
 @section('title', 'Edit Task')
 
 @section('section')
-    <form action="{{ route('tasks.update' , ['id' => $task->id ] ) }}"  method="POST" >
+    <form action="{{ route('tasks.update' , ['task' => $task->id ] ) }}"  method="POST" >
         @csrf
         @method('PUT')
         <div>
@@ -22,6 +22,18 @@
             <p>{{$message}}</p>
             @enderror
         </div>
+
+        <div>
+            <label for="completed">Status</label>
+            <select name="completed" id="completed">
+                <option value="0" {{ $task->completed == 0 ? 'selected' : '' }}>Not Complete</option>
+                <option value="1" {{ $task->completed == 1 ? 'selected' : '' }}>Complete</option>
+            </select>
+            @error('completed')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
         <div>
             <label for="long_description">Long Description</label>
             <textarea name="long_description" id="long_description" rows="10">
