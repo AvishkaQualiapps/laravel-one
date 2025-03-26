@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<div>
+<div class="container mx-auto mt-10 mb-10 max-w-lg">
     @if(count($tasks))
         @foreach ($tasks as $task)
 
@@ -21,6 +21,9 @@
             </div>
 
         @endforeach
+        <div>
+            {{ $tasks->links() }}
+        </div>
     @else
         <p>There are no tasks</p>
     @endif
