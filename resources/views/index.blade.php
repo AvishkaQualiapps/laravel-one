@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 <div class="container mx-auto mt-10 mb-10 max-w-lg">
+    <nav class="mb-4">
+        <a href="{{route('tasks.create')}}">Add Task</a>
+    </nav>
     @if(count($tasks))
         @foreach ($tasks as $task)
 
-            <div>
+            <div class="{{ isset($task->completed) ? 'red' : '' }}">
                 <a href="{{ route('tasks.show', ['task' => $task->id]) }}">
                     <h2>{{ $task->title }}</h2>
                 </a>

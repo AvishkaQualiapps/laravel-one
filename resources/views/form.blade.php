@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', isset($task) ? 'Edit Task' : 'Edit Task')
+@section('title', isset($task) ? 'Edit Task' : 'Add Task')
 
 @section('section')
     <form action="{{ isset($task) ? route('tasks.update', ['task' => $task->id]) : route('tasks.store') }}" method="POST">

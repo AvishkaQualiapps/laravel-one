@@ -11,7 +11,7 @@
 <body>
     <div class="container mx-auto mt-10 mb-10 max-w-lg">
         <h1>Task List App</h1>
-        <h2>@yield('title')</h2>
+        <h2 class="text-2xl">@yield('title')</h2>
         <div>
             @if (session()->has('success'))
                 <div>{{session('success')}}</div>
